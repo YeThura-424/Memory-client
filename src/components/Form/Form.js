@@ -2,10 +2,35 @@ import React, { useState } from "react";
 import { TextField, Button, Typography, Paper } from "@mui/material";
 import FileBase from "react-file-base64";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import useStyles from "./styles";
+// import {useStyles} from "./styles";
+import { makeStyles } from "@mui/styles";
 
+const theme = createTheme({
+    spacing: '4',
+});
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+    },
+  },
+  paper: {
+    padding: theme.spacing(2),
+  },
+  form: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
+  fileInput: {
+    width: '97%',
+    margin: '10px 0',
+  },
+  buttonSubmit: {
+    marginBottom: 10,
+  },
+}))
 const Form = () => {
-  const theme = createTheme();
   const classes = useStyles();
   const [postData, setPostData] = useState({
     creator: "",
