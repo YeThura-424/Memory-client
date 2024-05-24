@@ -1,26 +1,41 @@
 import React, { useEffect } from "react";
-import { Container, AppBar, Typography, Grow, Grid } from '@mui/material';
-import memory from './images/images.jpeg';
+import { Container, AppBar, Typography, Grow, Grid } from "@mui/material";
+import memory from "./images/images.jpeg";
 import Posts from "./components/Posts/Posts.js";
 import Form from "./components/Form/Form.js";
-import useStyles from './styles.js';
+import useStyles from "./styles.js";
 import { useDispatch } from "react-redux";
-import {getPosts} from './actions/posts.js'
+import { getPosts } from "./actions/posts.js";
+
 const App = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPosts())
+    dispatch(getPosts());
   }, [dispatch]);
   return (
-    <Container maxWidth="lg">
+    
+      <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography className={classes.heading} variant="h2" align="center">Memory</Typography>
-        <img className={classes.image} src={memory} alt="memory" height="60" width="80" />
+        <Typography className={classes.heading} variant="h2" align="center">
+          Memory
+        </Typography>
+        <img
+          className={classes.image}
+          src={memory}
+          alt="memory"
+          height="60"
+          width="80"
+        />
       </AppBar>
-      <Grow in> 
+      <Grow in>
         <Container>
-          <Grid container justifyContent="space-between" alignItems="stretch" spacing={3}>
+          <Grid
+            container
+            justifyContent="space-between"
+            alignItems="stretch"
+            spacing={3}
+          >
             <Grid item xs={12} sm={7}>
               <Posts />
             </Grid>
@@ -31,7 +46,8 @@ const App = () => {
         </Container>
       </Grow>
     </Container>
-  )
+
+  );
 };
 
 export default App;
