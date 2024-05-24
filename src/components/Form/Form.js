@@ -11,11 +11,11 @@ const theme = createTheme({
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
-      margin: theme.spacing(1),
+      margin: '10px 0',
     },
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: '10px 0',
   },
   form: {
     display: 'flex',
