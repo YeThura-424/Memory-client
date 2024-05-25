@@ -1,35 +1,9 @@
 import React, { useState } from "react";
 import { TextField, Button, Typography, Paper } from "@mui/material";
 import FileBase from "react-file-base64";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-// import {useStyles} from "./styles";
-import { makeStyles } from "@mui/styles";
 
-const theme = createTheme({
-    spacing: '4',
-});
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: '10px 0',
-    },
-  },
-  paper: {
-    padding: '10px 0',
-  },
-  form: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-  },
-  fileInput: {
-    width: '97%',
-    margin: '10px 0',
-  },
-  buttonSubmit: {
-    marginBottom: 10,
-  },
-}))
+import useStyles from "./styles";
+
 const Form = () => {
   const classes = useStyles();
   const [postData, setPostData] = useState({
@@ -47,7 +21,6 @@ const Form = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
       <Paper className={classes.paper}>
         <Form
           autoComplete="off"
@@ -123,7 +96,6 @@ const Form = () => {
           </Button>
         </Form>
       </Paper>
-    </ThemeProvider>
   );
 };
 
