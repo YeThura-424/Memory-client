@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { TextField, Button, Typography, Paper } from "@mui/material";
+import { TextField, Button, Paper } from "@mui/material";
 import FileBase from "react-file-base64";
 
 import useStyles from "./styles";
-import { ThemeProvider } from '@mui/styles';
-import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme();
 
 const Form = () => {
   const classes = useStyles();
@@ -25,8 +22,6 @@ const Form = () => {
   };
 
   return (
-    
-    <ThemeProvider theme={theme}>
       <Paper className={classes.paper}>
         <Form
           autoComplete="off"
@@ -102,8 +97,6 @@ const Form = () => {
           </Button>
         </Form>
       </Paper>
-    </ThemeProvider>
-      
   );
 };
 
