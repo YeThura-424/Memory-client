@@ -1,28 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Container, AppBar, Typography, Grow, Grid } from "@mui/material";
 import memory from "./images/images.jpeg";
 import Posts from "./components/Posts/Posts.js";
 import Form from "./components/Form/Form.js";
-import useStyles from "./styles.js";
-import { useDispatch } from "react-redux";
-import { getPosts } from "./actions/posts.js";
-import theme from './theme.js';
-import { ThemeProvider } from "@mui/material/styles";
+
 const App = () => {
-  const classes = useStyles();
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getPosts());
-  }, [dispatch]);
+
   return (
-    <ThemeProvider theme={theme}>
       <Container maxWidth="lg">
-      <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography className={classes.heading} variant="h2" align="center">
+      <AppBar position="static" color="inherit">
+        <Typography variant="h2" align="center">
           Memory
         </Typography>
         <img
-          className={classes.image}
           src={memory}
           alt="memory"
           height="60"
@@ -47,7 +37,6 @@ const App = () => {
         </Container>
       </Grow>
     </Container>
-    </ThemeProvider>
   );
 };
 

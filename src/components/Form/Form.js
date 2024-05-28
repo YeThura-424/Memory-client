@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import { TextField, Button, Paper } from "@mui/material";
 import FileBase from "react-file-base64";
 
-import useStyles from "./styles";
-
-
 const Form = () => {
-  const classes = useStyles();
   const [postData, setPostData] = useState({
     creator: "",
     title: "",
@@ -22,11 +18,10 @@ const Form = () => {
   };
 
   return (
-      <Paper className={classes.paper}>
+      <Paper>
         <Form
           autoComplete="off"
           noValidation
-          className={`${classes.root} ${classes.form}`}
           onSubmit={handleSubmit}
         >
           <TextField
@@ -67,7 +62,7 @@ const Form = () => {
             value={postData.tags}
             onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
           />
-          <div className={classes.fileInput}>
+          <div>
             <FileBase
               type="file"
               multiple={false}
@@ -77,7 +72,6 @@ const Form = () => {
             />
           </div>
           <Button
-            className={classes.buttonSubmit}
             varient="contained"
             color="primary"
             size="large"
